@@ -8,7 +8,7 @@ tags:
 - SQL
 ---
 
-## This are some notes for mysql.
+## This are some notes for mysql. 
 
 <!--more-->
 
