@@ -6,7 +6,7 @@
     <description>Recent content in Sql on kigochen web</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Feb 2019 22:03:28 +0800</lastBuildDate>
     
 	<atom:link href="https://kigochen.github.io/categories/sql/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,10 @@
     <item>
       <title>MySQL Note</title>
       <link>https://kigochen.github.io/2019/02/mysql-note/</link>
-      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Feb 2019 22:03:28 +0800</pubDate>
       
       <guid>https://kigochen.github.io/2019/02/mysql-note/</guid>
-      <description>&lt;h2 id=&#34;this-are-some-notes-for-mysql&#34;&gt;This are some notes for mysql.&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;this-are-notes-for-basic-sql&#34;&gt;This are notes for basic SQL.&lt;/h2&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
