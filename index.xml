@@ -17,31 +17,9 @@
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://kigochen.github.io/2019/02/mysql-note/</guid>
-      <description>&lt;nav&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#this-are-some-notes-for-mysql&#34;&gt;This are some notes for mysql.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#optimize-table&#34;&gt;optimize table&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#資料庫調校&#34;&gt;資料庫調校&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#清理碎片&#34;&gt;清理碎片&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#資料庫大動作變動程序-盡可能不要影響到原表格&#34;&gt;資料庫大動作變動程序 (盡可能不要影響到原表格)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#確認表格的-foreign-key&#34;&gt;確認表格的 foreign key&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/nav&gt;</description>
+      <description>&lt;h2 id=&#34;this-are-some-notes-for-mysql&#34;&gt;This are some notes for mysql.&lt;/h2&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

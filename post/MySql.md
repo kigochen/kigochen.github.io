@@ -8,11 +8,10 @@ tags:
 - SQL
 ---
 
+## This are some notes for mysql.
 
 <!--more-->
 
-
-###### This are some notes for mysql.
 
 
 ## optimize table
