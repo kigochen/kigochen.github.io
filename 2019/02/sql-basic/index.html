@@ -30,18 +30,21 @@
     
 
     
-    <meta name="description" content="DBMS:tada: - DBMS: Oracle, MySQL, PostgresSQL, Ms SQL server&hellip;etc. - SQL: 用以操作 DBMS 的系統的語言 (Structured Query Language) - DDL(Data Definition Language) - 用來定義資料庫/表格概念和實體階層的內容與其存在關係，也就是描述資料庫中的資料，包括欄位、型態和資料結構等等。 - CREATE, DROP, ALTER - DML(Data Manipulation Language): - 允許使用者存取或是處理資料庫中的資料 - SELECT, INSERT, DELETE, UPDATE
-DML Syntax:tada: SELECT - extracts data from a database  SELECT &gt; select the column names of the table you want from table sql= SELECT table_name, owner FROM all_tables;  sql=&#43; SELECT * FROM all_tables;  SELECT DISTINCT &gt; used to return only distinct result ```sql= SELECT cf_value_11 FROM SPACE.">
-    <meta property="og:description" content="DBMS:tada: - DBMS: Oracle, MySQL, PostgresSQL, Ms SQL server&hellip;etc. - SQL: 用以操作 DBMS 的系統的語言 (Structured Query Language) - DDL(Data Definition Language) - 用來定義資料庫/表格概念和實體階層的內容與其存在關係，也就是描述資料庫中的資料，包括欄位、型態和資料結構等等。 - CREATE, DROP, ALTER - DML(Data Manipulation Language): - 允許使用者存取或是處理資料庫中的資料 - SELECT, INSERT, DELETE, UPDATE
-DML Syntax:tada: SELECT - extracts data from a database  SELECT &gt; select the column names of the table you want from table sql= SELECT table_name, owner FROM all_tables;  sql=&#43; SELECT * FROM all_tables;  SELECT DISTINCT &gt; used to return only distinct result ```sql= SELECT cf_value_11 FROM SPACE.">
+    <meta name="description" content="This are some notes for basic SQL.
+
+">
+    <meta property="og:description" content="This are some notes for basic SQL.
+
+">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="SQL Basic">
     <meta property="og:url" content="/2019/02/sql-basic/">
     <meta property="og:site_name" content="kigochen web">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="kigochen web">
-    <meta name="twitter:description" content="DBMS:tada: - DBMS: Oracle, MySQL, PostgresSQL, Ms SQL server&hellip;etc. - SQL: 用以操作 DBMS 的系統的語言 (Structured Query Language) - DDL(Data Definition Language) - 用來定義資料庫/表格概念和實體階層的內容與其存在關係，也就是描述資料庫中的資料，包括欄位、型態和資料結構等等。 - CREATE, DROP, ALTER - DML(Data Manipulation Language): - 允許使用者存取或是處理資料庫中的資料 - SELECT, INSERT, DELETE, UPDATE
-DML Syntax:tada: SELECT - extracts data from a database  SELECT &gt; select the column names of the table you want from table sql= SELECT table_name, owner FROM all_tables;  sql=&#43; SELECT * FROM all_tables;  SELECT DISTINCT &gt; used to return only distinct result ```sql= SELECT cf_value_11 FROM SPACE.">
+    <meta name="twitter:description" content="This are some notes for basic SQL.
+
+">
     
     
 
@@ -236,97 +239,176 @@ DML Syntax:tada: SELECT - extracts data from a database  SELECT &gt; select the 
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              
+              <h2 id="this-are-some-notes-for-basic-sql">This are some notes for basic SQL.</h2>
 
-<h2 id="dbms-tada">DBMS:tada:</h2>
+<p></p>
+
+<h2 id="dbms">DBMS</h2>
 
 <p><img src="https://i.imgur.com/nJble7Z.png" alt="" />
-- DBMS: Oracle, MySQL, PostgresSQL, Ms SQL server&hellip;etc.
-- SQL: 用以操作 DBMS 的系統的語言 (<strong>Structured Query Language</strong>)
-    - DDL(Data Definition Language)
-        - 用來定義資料庫/表格概念和實體階層的內容與其存在關係，也就是描述資料庫中的資料，包括欄位、型態和資料結構等等。
-        - CREATE, DROP, ALTER
-    - DML(Data Manipulation Language):
-        - 允許使用者存取或是處理資料庫中的資料
-        - <strong>SELECT</strong>, INSERT, DELETE, UPDATE</p>
+- DBMS: Oracle, MySQL, PostgresSQL, Ms SQL server&hellip;etc.</p>
+
+<ul>
+<li><p>SQL: 用以操作 DBMS 的系統的語言 (<strong>Structured Query Language</strong>)</p>
+
+<ul>
+<li><p>DDL(Data Definition Language)</p>
+
+<ul>
+<li><p>用來定義資料庫/表格概念和實體階層的內容與其存在關係，也就是描述資料庫中的資料，包括欄位、型態和資料結構等等。</p></li>
+
+<li><p>CREATE, DROP, ALTER</p></li>
+</ul></li>
+
+<li><p>DML(Data Manipulation Language):</p>
+
+<ul>
+<li><p>允許使用者存取或是處理資料庫中的資料</p></li>
+
+<li><p><strong>SELECT</strong>, INSERT, DELETE, UPDATE</p></li>
+</ul></li>
+</ul></li>
+</ul>
 
 <h2 id="dml-syntax-tada">DML Syntax:tada:</h2>
 
 <h3 id="select-extracts-data-from-a-database">SELECT - extracts data from a database</h3>
 
 <ul>
-<li>SELECT
-&gt; select the column names of the table you want from table
-<code>sql=
-SELECT table_name, owner FROM all_tables;
-</code>
-<code>sql=+
-SELECT * FROM all_tables;
-</code></li>
-<li>SELECT DISTINCT
-&gt; used to return only distinct result
-```sql=
-SELECT cf_value_11 FROM SPACE.T_CHANNEL_DEF
-;</li>
+<li>SELECT</li>
 </ul>
 
-<p>SELECT DISTINCT cf_value_11 FROM SPACE.T_CHANNEL_DEF
-;</p>
+<blockquote>
+<p>select the column names of the table you want from table</p>
 
-<pre><code>```sql=+
-SELECT COUNT(DISTINCT cf_value_11) FROM SPACE.T_CHANNEL_DEF
+<pre><code class="language-sql=">SELECT table_name, owner FROM all_tables;
+</code></pre>
+
+<pre><code class="language-sql=+">SELECT * FROM all_tables;
+</code></pre>
+
+<ul>
+<li>SELECT DISTINCT</li>
+</ul>
+
+<p>used to return only distinct result</p>
+
+<pre><code class="language-sql=">SELECT cf_value_11 FROM SPACE.T_CHANNEL_DEF
+;
+
+SELECT DISTINCT cf_value_11 FROM SPACE.T_CHANNEL_DEF
+;
+</code></pre>
+
+<pre><code class="language-sql=+">SELECT COUNT(DISTINCT cf_value_11) FROM SPACE.T_CHANNEL_DEF
 ;
 </code></pre>
 
 <ul>
-<li>WHERE
-&gt; Used to extract only those records that fulfill a specified condition
-<code>sql=
-SELECT column1, column2, ...
-FROM table_name
-WHERE condition;
-</code>
-```sql=+
-SELECT DISTINCT CH_ID, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
-WHERE cf_value_11 = &lsquo;PHOTO&rsquo;
-;</li>
+<li>WHERE</li>
 </ul>
 
-<p>SELECT CH_ID, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
-WHERE CH_ID = &lsquo;142&rsquo;
-;</p>
+<p>Used to extract only those records that fulfill a specified condition</p>
 
-<p>SELECT * FROM SPACE.T_CHANNEL_DEF
-WHERE cf_value_11 = &lsquo;PHOTO&rsquo;
+<pre><code class="language-sql=">SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+</code></pre>
+
+<pre><code class="language-sql=+">SELECT DISTINCT CH_ID, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+WHERE cf_value_11 = 'PHOTO'
+;
+SELECT CH_ID, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+WHERE CH_ID = '142'
+;
+SELECT * FROM SPACE.T_CHANNEL_DEF
+WHERE cf_value_11 = 'PHOTO'
 AND (CH_ID=142 OR CH_ID=143)
-;</p>
-
-<p>SELECT DISTINCT cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
-WHERE NOT cf_value_11 = &lsquo;PHOTO&rsquo;
-;</p>
-
-<p>SELECT DISTINCT cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+;
+SELECT DISTINCT cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+WHERE NOT cf_value_11 = 'PHOTO'
+;
+SELECT DISTINCT cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
 WHERE cf_value_11 IS NOT NULL
-;</p>
+;
+</code></pre>
+</blockquote>
 
-<pre><code>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
 
-| Operator | Description|
-| -------- | -------- | -------- |
-| = | Equal|
-| &lt;&gt; |  Not equal. Note: In some versions of SQL this operator may be written as **!=**|
-| &gt; |   Greater than|
-| &lt; |   Less than|
-| &gt;=|   Greater than or equal|
-| &lt;=|   Less than or equal|
-| BETWEEN|  Between an inclusive range|
-| LIKE| Search for a pattern|
-| IN|   To specify multiple possible values for a column|
+<tbody>
+<tr>
+<td>=</td>
+<td>Equal</td>
+<td></td>
+</tr>
 
-* ORDER BY
-&gt; The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
-```sql=
-SELECT column1, column2, ...
+<tr>
+<td>&lt;&gt;</td>
+<td>Not equal. Note: In some versions of SQL this operator may be written as <strong>!=</strong></td>
+<td></td>
+</tr>
+
+<tr>
+<td>&gt;</td>
+<td>Greater than</td>
+<td></td>
+</tr>
+
+<tr>
+<td>&lt;</td>
+<td>Less than</td>
+<td></td>
+</tr>
+
+<tr>
+<td>&gt;=</td>
+<td>Greater than or equal</td>
+<td></td>
+</tr>
+
+<tr>
+<td>&lt;=</td>
+<td>Less than or equal</td>
+<td></td>
+</tr>
+
+<tr>
+<td>BETWEEN</td>
+<td>Between an inclusive range</td>
+<td></td>
+</tr>
+
+<tr>
+<td>LIKE</td>
+<td>Search for a pattern</td>
+<td></td>
+</tr>
+
+<tr>
+<td>IN</td>
+<td>To specify multiple possible values for a column</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>ORDER BY</li>
+</ul>
+
+<blockquote>
+<p>The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.</p>
+</blockquote>
+
+<pre><code class="language-sql=">SELECT column1, column2, ...
 FROM table_name
 ORDER BY column1, column2, ... ASC|DESC;
 </code></pre>
@@ -343,9 +425,12 @@ ORDER BY ch_id DESC, cf_value_11 ASC
 </code></pre>
 
 <ul>
-<li>SELECT LIMIT
-&gt; used to specify the number of records to return.</li>
+<li>SELECT LIMIT</li>
 </ul>
+
+<blockquote>
+<p>used to specify the number of records to return.</p>
+</blockquote>
 
 <p>ANSI</p>
 
@@ -362,7 +447,7 @@ WHERE ROWNUM &lt;= 10
 </code></pre>
 
 <ul>
-<li>FUNCTIONS
+<li><p>FUNCTIONS</p>
 
 <ul>
 <li><a href="https://docs.oracle.com/cd/B19306_01/server.102/b14200/functions001.htm">oracle functions</a></li>
@@ -374,19 +459,22 @@ FROM Products;
 </code></pre>
 
 <ul>
-<li><p>LIKE
-&gt; Used in a WHERE clause to search for a specified pattern in a column</p>
-
-<p>% : The percent sign represents zero, one, or multiple characters
-_ : The underscore represents a single character</p></li>
+<li>LIKE</li>
 </ul>
+
+<blockquote>
+<p>Used in a WHERE clause to search for a specified pattern in a column</p>
+</blockquote>
+
+<pre><code>% : The percent sign represents zero, one, or multiple characters
+_ : The underscore represents a single character
+</code></pre>
 
 <pre><code class="language-sql=">SELECT ch_id, ch_name, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
 WHERE cf_value_11 IS NOT NULL
 AND CH_NAME LIKE '5030%'
 ORDER BY ch_id DESC, cf_value_11 ASC
 ;
-
 SELECT ch_id, ch_name, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
 WHERE cf_value_11 IS NOT NULL
 AND CH_NAME LIKE '5030-_2%'
@@ -395,15 +483,17 @@ ORDER BY ch_id DESC, cf_value_11 ASC
 </code></pre>
 
 <ul>
-<li>IN
-&gt; Allows you to specify multiple values in a WHERE clause</li>
+<li>IN</li>
 </ul>
+
+<blockquote>
+<p>Allows you to specify multiple values in a WHERE clause</p>
+</blockquote>
 
 <pre><code class="language-sql=">SELECT ch_id, ch_name, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
 WHERE cf_value_11 IS NOT NULL
 AND ch_id IN (5566,9527,9487,8763)
 ;
-
 SELECT ch_id, ch_name, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
 WHERE ch_id IN (
 SELECT DISTINCT ch_id FROM SPACE.T_CHANNEL_DEF
@@ -528,8 +618,7 @@ GROUP BY cf_value_11
 </code></pre>
 
 <ul>
-<li><p>HAVING
-&gt;</p>
+<li><p>HAVING</p>
 
 <pre><code class="language-sql=">SELECT COUNT(*), cf_value_11 AS AREA
 FROM SPACE.T_CHANNEL_DEF
@@ -548,16 +637,16 @@ GROUP BY cf_value_11
 HAVING COUNT(*) &gt; 5566
 ORDER BY COUNT(*)
 ;
-</code></pre>
+</code></pre></li>
+</ul>
 
 <h3 id="update-updates-data-in-a-database">UPDATE - updates data in a database</h3>
 
 <h3 id="delete-deletes-data-from-a-database">DELETE - deletes data from a database</h3>
 
-<h3 id="insert-into-inserts-new-data-into-a-database">INSERT INTO - inserts new data into a database</h3></li>
-</ul>
+<h3 id="insert-into-inserts-new-data-into-a-database">INSERT INTO - inserts new data into a database</h3>
 
-<h2 id="dml-syntax-tada-1">DML Syntax:tada:</h2>
+<h2 id="dml-syntax">DML Syntax</h2>
 
 <h3 id="create-database-creates-a-new-database">CREATE DATABASE - creates a new database</h3>
 
@@ -573,42 +662,37 @@ ORDER BY COUNT(*)
 
 <h3 id="drop-index-deletes-an-index">DROP INDEX - deletes an index</h3>
 
-<h1 id="connect-db-setting-tada">Connect DB Setting:tada:</h1>
-
-<h3 id="dbeaver-setting">DBeaver Setting</h3>
-
-<ul>
-<li>Install file path
-&gt; \tawbddev01\Shared\0.Meets-up\0.SQL\Tools</li>
-</ul>
+<h1 id="connect-db-setting">Connect DB Setting</h1>
 
 <h3 id="r-connect-server-and-get-data">R Connect server and Get data</h3>
 
 <ul>
-<li>Oracle
-<code>R=
-library(RODBC)
+<li>Oracle</li>
+</ul>
+
+<pre><code class="language-R=">library(RODBC)
 con &lt;- odbcConnect(&quot;DD1&quot;, uid=&quot;rquser&quot;, pwd=&quot;rquser&quot;, rows_at_time = 500)
 d &lt;- sqlQuery(con, &quot;select * from TEST_TABLE&quot;)
 close(con)
-</code></li>
-<li>Teradata
-```R=
-options(java.parameters = &ldquo;-Xmx8048m&rdquo;)
-options(java.home=&rdquo;********&ldquo;) #set path for loading jvm.dll
-library(rJava)
-library(RJDBC)
-drv=JDBC(&ldquo;com.teradata.jdbc.TeraDriver&rdquo;,&ldquo;c:\teradataJDBCdRIVER\terajdbc4.jar;c:\teradataJDBCdRIVER\tdgssconfig.jar&rdquo;)</li>
+</code></pre>
+
+<ul>
+<li>Teradata</li>
 </ul>
 
-<p>conn &lt;- dbConnect(drv, &ldquo;jdbc:teradata://servername/database=dbname,LOGMECH=LDAP&rdquo;, &ldquo;login name&rdquo;, &ldquo;password&rdquo;)
-querystring &lt;- paste0(&ldquo;SELECT * from testDB&rdquo;)</p>
+<pre><code class="language-R=">options(java.parameters = &quot;-Xmx8048m&quot;)
+options(java.home=&quot;********&quot;) #set path for loading jvm.dll
+library(rJava)
+library(RJDBC)
+drv=JDBC(&quot;com.teradata.jdbc.TeraDriver&quot;,&quot;c:\\teradataJDBCdRIVER\\terajdbc4.jar;c:\\teradataJDBCdRIVER\\tdgssconfig.jar&quot;)
 
-<p>results &lt;- dbSendQuery(conn, querystring)
+conn &lt;- dbConnect(drv, &quot;jdbc:teradata://servername/database=dbname,LOGMECH=LDAP&quot;, &quot;login name&quot;, &quot;password&quot;)
+querystring &lt;- paste0(&quot;SELECT * from testDB&quot;)
+
+results &lt;- dbSendQuery(conn, querystring)
 dataset &lt;- dbFetch(results)
 dbDisconnect(conn)
-```</p>
-
+</code></pre>
               
             </div>
           </div>
@@ -862,8 +946,9 @@ dbDisconnect(conn)
                   Feb 2, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">DBMS:tada: - DBMS: Oracle, MySQL, PostgresSQL, Ms SQL server&hellip;etc. - SQL: 用以操作 DBMS 的系統的語言 (Structured Query Language) - DDL(Data Definition Language) - 用來定義資料庫/表格概念和實體階層的內容與其存在關係，也就是描述資料庫中的資料，包括欄位、型態和資料結構等等。 - CREATE, DROP, ALTER - DML(Data Manipulation Language): - 允許使用者存取或是處理資料庫中的資料 - SELECT, INSERT, DELETE, UPDATE
-DML Syntax:tada: SELECT - extracts data from a database  SELECT &gt; select the column names of the table you want from table sql= SELECT table_name, owner FROM all_tables;  sql=+ SELECT * FROM all_tables;  SELECT DISTINCT &gt; used to return only distinct result ```sql= SELECT cf_value_11 FROM SPACE.</div>
+              <div class="media-content hide-xs font-merryweather"><h2 id="this-are-some-notes-for-basic-sql">This are some notes for basic SQL.</h2>
+
+<p></p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
