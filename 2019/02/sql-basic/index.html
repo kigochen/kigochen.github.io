@@ -1,0 +1,1015 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.27 with theme Tranquilpeak 0.4.1-BETA">
+    <title>SQL Basic</title>
+    <meta name="author" content="Kigo Chen">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://kigochen.github.io/favicon.png">
+    
+
+    
+    <meta name="description" content="DBMS:tada: - DBMS: Oracle, MySQL, PostgresSQL, Ms SQL server&hellip;etc. - SQL: 用以操作 DBMS 的系統的語言 (Structured Query Language) - DDL(Data Definition Language) - 用來定義資料庫/表格概念和實體階層的內容與其存在關係，也就是描述資料庫中的資料，包括欄位、型態和資料結構等等。 - CREATE, DROP, ALTER - DML(Data Manipulation Language): - 允許使用者存取或是處理資料庫中的資料 - SELECT, INSERT, DELETE, UPDATE
+DML Syntax:tada: SELECT - extracts data from a database  SELECT &gt; select the column names of the table you want from table sql= SELECT table_name, owner FROM all_tables;  sql=&#43; SELECT * FROM all_tables;  SELECT DISTINCT &gt; used to return only distinct result ```sql= SELECT cf_value_11 FROM SPACE.">
+    <meta property="og:description" content="DBMS:tada: - DBMS: Oracle, MySQL, PostgresSQL, Ms SQL server&hellip;etc. - SQL: 用以操作 DBMS 的系統的語言 (Structured Query Language) - DDL(Data Definition Language) - 用來定義資料庫/表格概念和實體階層的內容與其存在關係，也就是描述資料庫中的資料，包括欄位、型態和資料結構等等。 - CREATE, DROP, ALTER - DML(Data Manipulation Language): - 允許使用者存取或是處理資料庫中的資料 - SELECT, INSERT, DELETE, UPDATE
+DML Syntax:tada: SELECT - extracts data from a database  SELECT &gt; select the column names of the table you want from table sql= SELECT table_name, owner FROM all_tables;  sql=&#43; SELECT * FROM all_tables;  SELECT DISTINCT &gt; used to return only distinct result ```sql= SELECT cf_value_11 FROM SPACE.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="SQL Basic">
+    <meta property="og:url" content="/2019/02/sql-basic/">
+    <meta property="og:site_name" content="kigochen web">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="kigochen web">
+    <meta name="twitter:description" content="DBMS:tada: - DBMS: Oracle, MySQL, PostgresSQL, Ms SQL server&hellip;etc. - SQL: 用以操作 DBMS 的系統的語言 (Structured Query Language) - DDL(Data Definition Language) - 用來定義資料庫/表格概念和實體階層的內容與其存在關係，也就是描述資料庫中的資料，包括欄位、型態和資料結構等等。 - CREATE, DROP, ALTER - DML(Data Manipulation Language): - 允許使用者存取或是處理資料庫中的資料 - SELECT, INSERT, DELETE, UPDATE
+DML Syntax:tada: SELECT - extracts data from a database  SELECT &gt; select the column names of the table you want from table sql= SELECT table_name, owner FROM all_tables;  sql=&#43; SELECT * FROM all_tables;  SELECT DISTINCT &gt; used to return only distinct result ```sql= SELECT cf_value_11 FROM SPACE.">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/c08213d1512b2ab786ab997186edb600?s=640">
+    
+
+    
+      <meta property="og:image" content="https://media.licdn.com/media/AAEAAQAAAAAAAAB1AAAAJDg1Y2YyNTVjLTJiMjgtNDc3ZS1hYmRjLTZkOTMzZGMxNDRiNw.jpg =700x200">
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://kigochen.github.io/css/style-fpbzgxsy0kgmdvyrj5ykkg6ratccrk3gocmaqn4xpcjywmv5dteilzucro4f.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://kigochen.github.io/">kigochen web</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://kigochen.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/c08213d1512b2ab786ab997186edb600?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://kigochen.github.io/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/c08213d1512b2ab786ab997186edb600?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Kigo Chen</h4>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kigochen.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kigochen.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kigochen.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kigochen.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kigochen.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/kigochen" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kigochen.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      SQL Basic
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-02-20T23:03:28&#43;08:00">
+        
+  February 20, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://kigochen.github.io/categories/notes">Notes</a>, 
+    
+      <a class="category-link" href="https://kigochen.github.io/categories/sql">SQL</a>
+    
+  
+
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<h2 id="dbms-tada">DBMS:tada:</h2>
+
+<p><img src="https://i.imgur.com/nJble7Z.png" alt="" />
+- DBMS: Oracle, MySQL, PostgresSQL, Ms SQL server&hellip;etc.
+- SQL: 用以操作 DBMS 的系統的語言 (<strong>Structured Query Language</strong>)
+    - DDL(Data Definition Language)
+        - 用來定義資料庫/表格概念和實體階層的內容與其存在關係，也就是描述資料庫中的資料，包括欄位、型態和資料結構等等。
+        - CREATE, DROP, ALTER
+    - DML(Data Manipulation Language):
+        - 允許使用者存取或是處理資料庫中的資料
+        - <strong>SELECT</strong>, INSERT, DELETE, UPDATE</p>
+
+<h2 id="dml-syntax-tada">DML Syntax:tada:</h2>
+
+<h3 id="select-extracts-data-from-a-database">SELECT - extracts data from a database</h3>
+
+<ul>
+<li>SELECT
+&gt; select the column names of the table you want from table
+<code>sql=
+SELECT table_name, owner FROM all_tables;
+</code>
+<code>sql=+
+SELECT * FROM all_tables;
+</code></li>
+<li>SELECT DISTINCT
+&gt; used to return only distinct result
+```sql=
+SELECT cf_value_11 FROM SPACE.T_CHANNEL_DEF
+;</li>
+</ul>
+
+<p>SELECT DISTINCT cf_value_11 FROM SPACE.T_CHANNEL_DEF
+;</p>
+
+<pre><code>```sql=+
+SELECT COUNT(DISTINCT cf_value_11) FROM SPACE.T_CHANNEL_DEF
+;
+</code></pre>
+
+<ul>
+<li>WHERE
+&gt; Used to extract only those records that fulfill a specified condition
+<code>sql=
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+</code>
+```sql=+
+SELECT DISTINCT CH_ID, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+WHERE cf_value_11 = &lsquo;PHOTO&rsquo;
+;</li>
+</ul>
+
+<p>SELECT CH_ID, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+WHERE CH_ID = &lsquo;142&rsquo;
+;</p>
+
+<p>SELECT * FROM SPACE.T_CHANNEL_DEF
+WHERE cf_value_11 = &lsquo;PHOTO&rsquo;
+AND (CH_ID=142 OR CH_ID=143)
+;</p>
+
+<p>SELECT DISTINCT cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+WHERE NOT cf_value_11 = &lsquo;PHOTO&rsquo;
+;</p>
+
+<p>SELECT DISTINCT cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+WHERE cf_value_11 IS NOT NULL
+;</p>
+
+<pre><code>
+
+| Operator | Description|
+| -------- | -------- | -------- |
+| = | Equal|
+| &lt;&gt; |  Not equal. Note: In some versions of SQL this operator may be written as **!=**|
+| &gt; |   Greater than|
+| &lt; |   Less than|
+| &gt;=|   Greater than or equal|
+| &lt;=|   Less than or equal|
+| BETWEEN|  Between an inclusive range|
+| LIKE| Search for a pattern|
+| IN|   To specify multiple possible values for a column|
+
+* ORDER BY
+&gt; The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
+```sql=
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;
+</code></pre>
+
+<pre><code class="language-sql=">SELECT * FROM SPACE.T_CHANNEL_DEF
+WHERE cf_value_11 IS NOT NULL
+ORDER BY ch_id
+;
+
+SELECT * FROM SPACE.T_CHANNEL_DEF
+WHERE cf_value_11 IS NOT NULL
+ORDER BY ch_id DESC, cf_value_11 ASC
+;
+</code></pre>
+
+<ul>
+<li>SELECT LIMIT
+&gt; used to specify the number of records to return.</li>
+</ul>
+
+<p>ANSI</p>
+
+<pre><code class="language-sql=">SELECT * FROM Customers
+LIMIT 3
+;
+</code></pre>
+
+<p>ORACLE</p>
+
+<pre><code class="language-sql=">SELECT * FROM SPACE.SAMPLES_RAW_WAFER
+WHERE ROWNUM &lt;= 10
+;
+</code></pre>
+
+<ul>
+<li>FUNCTIONS
+
+<ul>
+<li><a href="https://docs.oracle.com/cd/B19306_01/server.102/b14200/functions001.htm">oracle functions</a></li>
+</ul></li>
+</ul>
+
+<pre><code class="language-sql=">SELECT AVG(Price)
+FROM Products;
+</code></pre>
+
+<ul>
+<li><p>LIKE
+&gt; Used in a WHERE clause to search for a specified pattern in a column</p>
+
+<p>% : The percent sign represents zero, one, or multiple characters
+_ : The underscore represents a single character</p></li>
+</ul>
+
+<pre><code class="language-sql=">SELECT ch_id, ch_name, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+WHERE cf_value_11 IS NOT NULL
+AND CH_NAME LIKE '5030%'
+ORDER BY ch_id DESC, cf_value_11 ASC
+;
+
+SELECT ch_id, ch_name, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+WHERE cf_value_11 IS NOT NULL
+AND CH_NAME LIKE '5030-_2%'
+ORDER BY ch_id DESC, cf_value_11 ASC
+;
+</code></pre>
+
+<ul>
+<li>IN
+&gt; Allows you to specify multiple values in a WHERE clause</li>
+</ul>
+
+<pre><code class="language-sql=">SELECT ch_id, ch_name, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+WHERE cf_value_11 IS NOT NULL
+AND ch_id IN (5566,9527,9487,8763)
+;
+
+SELECT ch_id, ch_name, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+WHERE ch_id IN (
+SELECT DISTINCT ch_id FROM SPACE.T_CHANNEL_DEF
+WHERE cf_value_11 = 'PHOTO')
+;
+
+-- pair condition in
+SELECT ch_id, ch_name, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+WHERE (ch_id, ch_name) IN (
+SELECT DISTINCT ch_id, ch_name FROM SPACE.T_CHANNEL_DEF
+WHERE cf_value_11 = 'PHOTO')
+;
+
+-- remind that limit of condition number is 1000
+SELECT ch_id, ch_name, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+WHERE cf_value_11 IS NOT NULL
+AND ch_id IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,461,462,463,464,465,466,467,468,469,470,471,472,473,474,475,476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,496,497,498,499,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,524,525,526,527,528,529,530,531,532,533,534,535,536,537,538,539,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563,564,565,566,567,568,569,570,571,572,573,574,575,576,577,578,579,580,581,582,583,584,585,586,587,588,589,590,591,592,593,594,595,596,597,598,599,600,601,602,603,604,605,606,607,608,609,610,611,612,613,614,615,616,617,618,619,620,621,622,623,624,625,626,627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649,650,651,652,653,654,655,656,657,658,659,660,661,662,663,664,665,666,667,668,669,670,671,672,673,674,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,691,692,693,694,695,696,697,698,699,700,701,702,703,704,705,706,707,708,709,710,711,712,713,714,715,716,717,718,719,720,721,722,723,724,725,726,727,728,729,730,731,732,733,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752,753,754,755,756,757,758,759,760,761,762,763,764,765,766,767,768,769,770,771,772,773,774,775,776,777,778,779,780,781,782,783,784,785,786,787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802,803,804,805,806,807,808,809,810,811,812,813,814,815,816,817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,836,837,838,839,840,841,842,843,844,845,846,847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869,870,871,872,873,874,875,876,877,878,879,880,881,882,883,884,885,886,887,888,889,890,891,892,893,894,895,896,897,898,899,900,901,902,903,904,905,906,907,908,909,910,911,912,913,914,915,916,917,918,919,920,921,922,923,924,925,926,927,928,929,930,931,932,933,934,935,936,937,938,939,940,941,942,943,944,945,946,947,948,949,950,951,952,953,954,955,956,957,958,959,960,961,962,963,964,965,966,967,968,969,970,971,972,973,974,975,976,977,978,979,980,981,982,983,984,985,986,987,988,989,990,991,992,993,994,995,996,997,998,999,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1013,1014,1015,1016,1017,1018,1019,1020,1021,1022,1023,1024,1025)
+;
+
+-- use subquery as condition if you got plenty of it
+SELECT ch_id, ch_name, cf_value_11 AS AREA FROM SPACE.T_CHANNEL_DEF
+WHERE cf_value_11 IS NOT NULL
+AND ch_id IN (SELECT Rownum r FROM dual
+Connect By Rownum &lt;= 1025)
+;
+</code></pre>
+
+<ul>
+<li>ALIAS
+&gt; Renames columns
+<code>sql=
+SELECT CONCAT(CONCAT(TO_CHAR(ch_id),'_'),ch_name) AS id_name
+FROM SPACE.T_CHANNEL_DEF
+;
+</code></li>
+<li>JOIN
+
+<ul>
+<li><strong>(INNER) JOIN</strong>: Returns records that have matching values in both tables</li>
+<li><strong>LEFT (OUTER) JOIN</strong>: Return all records from the left table, and the matched records from the right table</li>
+<li><strong>RIGHT (OUTER) JOIN</strong>: Return all records from the right table, and the matched records from the left table</li>
+<li><strong>FULL (OUTER) JOIN</strong>: Return all records when there is a match in either left or right table
+&gt; Used to combine rows from two or more tables, based on a related column between them.</li>
+</ul></li>
+</ul>
+
+<p><img src="https://i.imgur.com/nEp6gAK.png" alt="" /></p>
+
+<pre><code class="language-sql=">SELECT
+      SC.CH_ID as CHANNEL_ID,
+      SC.CKC_ID,
+      SA.SAMPLE_ID,
+	  SA.LOT_ID,
+      SA.WAFER_ID,
+      SRW.RV_SEQ_NUM as SITE_NUMBER,
+      SRW.RAW_VALUE,
+      SA.SAMPLE_DATE,
+      SA.DESIGN_ID,
+      TCD.CH_NAME as CHANNEL_NAME,
+      SA.PROCESS_STEP_NAME,
+      SA.PARAMETER_NAME,
+      SA.PROCESS_TOOL_NAME,
+      ST.TAG_ID,
+      SA.WAFER_SCRIBE,
+      TCD.CF_VALUE_11 as AREA
+    FROM SPACE.SAMPLES_RAW_WAFER SRW
+      INNER JOIN SPACE.SAMPLES_ALL_V SA
+        ON SRW.SAMPLE_DATE = SA.SAMPLE_DATE
+           AND SRW.SAMPLE_ID = SA.SAMPLE_ID
+      INNER JOIN SPACE.SAMPLES_CALC SC
+        ON SRW.SAMPLE_DATE = SC.SAMPLE_DATE
+           AND SRW.SAMPLE_ID = SC.SAMPLE_ID
+      INNER JOIN SPACE.T_CHANNEL_DEF TCD
+        ON SC.CH_ID = TCD.CH_ID
+      LEFT JOIN SPACE.SAMPLES_TAG ST
+        ON SA.SAMPLE_ID = ST.SAMPLE_ID
+    WHERE SC.CKC_ID = 0
+          AND TCD.CH_ID IN (658)
+          AND NOT REGEXP_LIKE(SA.SWR_AT_STEP, '^.+(SWR|TARGET|ENGINEERING)') --exclude SWR/ENG
+          AND SA.SPC_FLAG_EXTERN = 'N'
+          AND SA.SPC_FLAG_INTERN = 'N'
+          AND ST.TAG_ID IS NULL
+          AND SA.SAMPLE_DATE &gt; TO_DATE('03/01/2017 07:00:00 PM', 'MM/DD/YYYY HH:MI:SS AM')
+          AND SA.SAMPLE_DATE &lt; TO_DATE('03/30/2017 07:00:00 PM', 'MM/DD/YYYY HH:MI:SS AM');
+
+</code></pre>
+
+<ul>
+<li>UNION Operator
+
+<ul>
+<li>Each SELECT statement within UNION must have the same number of columns</li>
+<li>The columns must also have similar data types</li>
+<li>The columns in each SELECT statement must also be in the same order
+&gt; Used to combine the result-set of two or more SELECT statements.</li>
+</ul></li>
+</ul>
+
+<pre><code class="language-sql=">-- list all (duplicate values also)
+SELECT DISTINCT cf_value_11 FROM SPACE.T_CHANNEL_DEF
+UNION ALL 
+SELECT DISTINCT cf_value_11 FROM SPACE.T_CHANNEL_DEF
+;
+
+
+-- only distinct values
+SELECT DISTINCT cf_value_11 FROM SPACE.T_CHANNEL_DEF
+UNION 
+SELECT DISTINCT cf_value_11 FROM SPACE.T_CHANNEL_DEF
+;
+</code></pre>
+
+<ul>
+<li>GROUP BY
+&gt; Used with aggregate functions (COUNT, MAX, MIN, SUM, AVG) to group result by some columns</li>
+</ul>
+
+<pre><code class="language-sql=">SELECT COUNT(*), cf_value_11 AS AREA
+FROM SPACE.T_CHANNEL_DEF
+GROUP BY cf_value_11
+;
+</code></pre>
+
+<ul>
+<li><p>HAVING
+&gt;</p>
+
+<pre><code class="language-sql=">SELECT COUNT(*), cf_value_11 AS AREA
+FROM SPACE.T_CHANNEL_DEF
+GROUP BY cf_value_11
+HAVING COUNT(*) &gt; 5566
+ORDER BY COUNT(*)
+;
+</code></pre></li>
+
+<li><p>NULL Functions
+&gt; User COALESCE instead of NVL (for performance)</p>
+
+<pre><code class="language-sql=">SELECT COUNT(*), COALESCE(cf_value_11, 'EMPTY_AREA') AS AREA
+FROM SPACE.T_CHANNEL_DEF
+GROUP BY cf_value_11
+HAVING COUNT(*) &gt; 5566
+ORDER BY COUNT(*)
+;
+</code></pre>
+
+<h3 id="update-updates-data-in-a-database">UPDATE - updates data in a database</h3>
+
+<h3 id="delete-deletes-data-from-a-database">DELETE - deletes data from a database</h3>
+
+<h3 id="insert-into-inserts-new-data-into-a-database">INSERT INTO - inserts new data into a database</h3></li>
+</ul>
+
+<h2 id="dml-syntax-tada-1">DML Syntax:tada:</h2>
+
+<h3 id="create-database-creates-a-new-database">CREATE DATABASE - creates a new database</h3>
+
+<h3 id="alter-database-modifies-a-database">ALTER DATABASE - modifies a database</h3>
+
+<h3 id="create-table-creates-a-new-table">CREATE TABLE - creates a new table</h3>
+
+<h3 id="alter-table-modifies-a-table">ALTER TABLE - modifies a table</h3>
+
+<h3 id="drop-table-deletes-a-table">DROP TABLE - deletes a table</h3>
+
+<h3 id="create-index-creates-an-index-search-key">CREATE INDEX - creates an index (search key)</h3>
+
+<h3 id="drop-index-deletes-an-index">DROP INDEX - deletes an index</h3>
+
+<h1 id="connect-db-setting-tada">Connect DB Setting:tada:</h1>
+
+<h3 id="dbeaver-setting">DBeaver Setting</h3>
+
+<ul>
+<li>Install file path
+&gt; \tawbddev01\Shared\0.Meets-up\0.SQL\Tools</li>
+</ul>
+
+<h3 id="r-connect-server-and-get-data">R Connect server and Get data</h3>
+
+<ul>
+<li>Oracle
+<code>R=
+library(RODBC)
+con &lt;- odbcConnect(&quot;DD1&quot;, uid=&quot;rquser&quot;, pwd=&quot;rquser&quot;, rows_at_time = 500)
+d &lt;- sqlQuery(con, &quot;select * from TEST_TABLE&quot;)
+close(con)
+</code></li>
+<li>Teradata
+```R=
+options(java.parameters = &ldquo;-Xmx8048m&rdquo;)
+options(java.home=&rdquo;********&ldquo;) #set path for loading jvm.dll
+library(rJava)
+library(RJDBC)
+drv=JDBC(&ldquo;com.teradata.jdbc.TeraDriver&rdquo;,&ldquo;c:\teradataJDBCdRIVER\terajdbc4.jar;c:\teradataJDBCdRIVER\tdgssconfig.jar&rdquo;)</li>
+</ul>
+
+<p>conn &lt;- dbConnect(drv, &ldquo;jdbc:teradata://servername/database=dbname,LOGMECH=LDAP&rdquo;, &ldquo;login name&rdquo;, &ldquo;password&rdquo;)
+querystring &lt;- paste0(&ldquo;SELECT * from testDB&rdquo;)</p>
+
+<p>results &lt;- dbSendQuery(conn, querystring)
+dataset &lt;- dbFetch(results)
+dbDisconnect(conn)
+```</p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://kigochen.github.io/tags/sql/">SQL</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                <i class="fa fa-angle-left"></i>
+                <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+              </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kigochen.github.io/2019/02/mysql-note/" data-tooltip="MySQL Note">
+              
+                <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                <i class="fa fa-angle-right"></i>
+              </a>
+            </li>
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kigochen.github.io/2019/02/sql-basic/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kigochen.github.io/2019/02/sql-basic/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kigochen.github.io/2019/02/sql-basic/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 Kigo Chen. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                <i class="fa fa-angle-left"></i>
+                <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+              </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kigochen.github.io/2019/02/mysql-note/" data-tooltip="MySQL Note">
+              
+                <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                <i class="fa fa-angle-right"></i>
+              </a>
+            </li>
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kigochen.github.io/2019/02/sql-basic/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kigochen.github.io/2019/02/sql-basic/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kigochen.github.io/2019/02/sql-basic/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkigochen.github.io%2F2019%2F02%2Fsql-basic%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fkigochen.github.io%2F2019%2F02%2Fsql-basic%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fkigochen.github.io%2F2019%2F02%2Fsql-basic%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/c08213d1512b2ab786ab997186edb600?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Kigo Chen</h4>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Data Scientist
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Taiwan
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kigochen.github.io/2019/02/sql-basic/">
+                <h3 class="media-heading">SQL Basic</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">DBMS:tada: - DBMS: Oracle, MySQL, PostgresSQL, Ms SQL server&hellip;etc. - SQL: 用以操作 DBMS 的系統的語言 (Structured Query Language) - DDL(Data Definition Language) - 用來定義資料庫/表格概念和實體階層的內容與其存在關係，也就是描述資料庫中的資料，包括欄位、型態和資料結構等等。 - CREATE, DROP, ALTER - DML(Data Manipulation Language): - 允許使用者存取或是處理資料庫中的資料 - SELECT, INSERT, DELETE, UPDATE
+DML Syntax:tada: SELECT - extracts data from a database  SELECT &gt; select the column names of the table you want from table sql= SELECT table_name, owner FROM all_tables;  sql=+ SELECT * FROM all_tables;  SELECT DISTINCT &gt; used to return only distinct result ```sql= SELECT cf_value_11 FROM SPACE.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kigochen.github.io/2019/02/mysql-note/">
+                <h3 class="media-heading">MySQL Note</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><h2 id="this-are-some-notes-for-mysql">This are some notes for mysql.</h2>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kigochen.github.io/2017/09/title-test-name/">
+                <h3 class="media-heading">Title test name</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">這不就架起來了嗎</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kigochen.github.io/2013/10/chinese-test/">
+                <h3 class="media-heading">中文測試</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2013
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>This is a chinese test post to show you how chinese is displayed.
+</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kigochen.github.io/post/">
+                <h3 class="media-heading">Posts</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         5 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://kigochen.github.io/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" integrity="sha256-IFHWFEbU2/+wNycDECKgjIRSirRNIDp2acEB5fvdVRU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js" integrity="sha256-+mpyNVJsNt4rVXCw0F+pAOiB3YxmHgrbJsx4ecPuUaI=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js" integrity="sha256-vMxgR/7FtLovVA+IPrR7+xTgIgARH7y9VZQnmmi0HDI=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js" integrity="sha256-N0qFUh7/9vLvia87dDndewmsgsyYoNkdA212tPc+2NI=" crossorigin="anonymous"></script>
+
+
+<script src="https://kigochen.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/kigochen.github.io\/2019\/02\/sql-basic\/';
+          
+            this.page.identifier = '\/2019\/02\/sql-basic\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'kigochen';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+
