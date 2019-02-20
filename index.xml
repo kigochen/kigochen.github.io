@@ -6,10 +6,45 @@
     <description>Recent content on kigochen web</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kigochen.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MySQL Note</title>
+      <link>https://kigochen.github.io/2019/02/mysql-note/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://kigochen.github.io/2019/02/mysql-note/</guid>
+      <description>&lt;nav&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#this-are-some-notes-for-mysql&#34;&gt;This are some notes for mysql.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#optimize-table&#34;&gt;optimize table&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#資料庫調校&#34;&gt;資料庫調校&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#清理碎片&#34;&gt;清理碎片&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#資料庫大動作變動程序-盡可能不要影響到原表格&#34;&gt;資料庫大動作變動程序 (盡可能不要影響到原表格)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#確認表格的-foreign-key&#34;&gt;確認表格的 foreign key&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Title test name</title>
@@ -18,6 +53,15 @@
       
       <guid>https://kigochen.github.io/2017/09/title-test-name/</guid>
       <description>這不就架起來了嗎</description>
+    </item>
+    
+    <item>
+      <title>first post</title>
+      <link>https://kigochen.github.io/2015/07/first-post/</link>
+      <pubDate>Thu, 16 Jul 2015 23:01:57 +0800</pubDate>
+      
+      <guid>https://kigochen.github.io/2015/07/first-post/</guid>
+      <description>This is my first post.</description>
     </item>
     
     <item>
