@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kigochen 的工具箱</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* --- 樣式與前一版相同，此處未更動 --- */
+        :root {
+            --background-color: #f0f2f5;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --subtext-color: #666666;
+            --accent-color: #007aff;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --shadow-hover-color: rgba(0, 0, 0, 0.12);
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+        }
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--card-background);
+            border-bottom: 1px solid #e0e0e0;
+        }
+        header h1 { margin: 0; font-size: 28px; font-weight: 600; }
+        header p { margin: 8px 0 0; color: var(--subtext-color); font-size: 16px; }
+        main { padding: 20px; }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .tool-card {
+            background-color: var(--card-background);
+            border-radius: 16px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            aspect-ratio: 1 / 1;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .tool-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 16px var(--shadow-hover-color);
+        }
+        .tool-card .card-icon {
+            font-size: 36px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            height: 40px;
+            line-height: 40px;
+        }
+        .tool-card h3 { font-size: 16px; font-weight: 500; margin: 0 0 5px 0; text-align: center; }
+        .tool-card p { font-size: 12px; color: var(--subtext-color); margin: 0; text-align: center; }
+        
+        /* 讀取中的提示樣式 */
+        .loading-message {
+            grid-column: 1 / -1; /* 讓提示訊息佔滿整行 */
+            text-align: center;
+            color: var(--subtext-color);
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>kigochen 的工具箱</h1>
+        <p>自動掃描 GitHub Pages 專案</p>
+    </header>
+
+    <main>
+        <!-- 這個容器將由下方的 JavaScript 動態填入內容 -->
+        <div class="tool-grid" id="tool-grid-container">
+            <!-- 初始顯示讀取中的訊息 -->
+            <div class="loading-message">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>正在從 GitHub 讀取您的專案...</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 當整個頁面載入完成後執行
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 您的 GitHub 使用者名稱
+            const username = 'kigochen';
+            
+            // API 端點，用來獲取所有公開專案，並依照最後更新時間排序
+            const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`;
+            
+            // 獲取要放置卡片的容器
+            const gridContainer = document.getElementById('tool-grid-container');
+
+            // 使用 fetch API 來獲取數據
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        // 如果 API 回應不正常 (例如超過速率限制)，則拋出錯誤
+                        throw new Error(`GitHub API 錯誤: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(repos => {
+                    // 篩選出有啟用 GitHub Pages 的專案
+                    const pagesRepos = repos.filter(repo => repo.has_pages && !repo.fork);
+
+                    // 清空讀取中的訊息
+                    gridContainer.innerHTML = '';
+
+                    if (pagesRepos.length === 0) {
+                        gridContainer.innerHTML = '<div class="loading-message"><p>找不到啟用 GitHub Pages 的專案。</p></div>';
+                        return;
+                    }
+
+                    // 遍歷所有篩選後的專案，並為每個專案建立一個卡片
+                    pagesRepos.forEach(repo => {
+                        const card = document.createElement('a');
+                        card.className = 'tool-card';
+                        
+                        // 處理 URL：
+                        // 如果專案名稱是 'username.github.io'，連結就是根目錄
+                        // 否則，連結是 '/repo-name/'
+                        const repoUrl = repo.name === `${username}.github.io`
+                            ? `https://${username}.github.io/`
+                            : `https://${username}.github.io/${repo.name}/`;
+                        
+                        card.href = repoUrl;
+                        card.target = '_blank'; // 在新分頁開啟
+                        card.rel = 'noopener noreferrer';
+
+                        // 這裡使用一個預設圖示，您可以為特定專案手動更換
+                        // 例如: const iconClass = repo.name === 'my-calc' ? 'fa-calculator' : 'fa-cube';
+                        const iconClass = 'fa-cube';
+
+                        card.innerHTML = `
+                            <i class="fas ${iconClass} card-icon"></i>
+                            <h3>${repo.name}</h3>
+                            <p>${repo.description || '無描述'}</p>
+                        `;
+
+                        gridContainer.appendChild(card);
+                    });
+                })
+                .catch(error => {
+                    // 如果過程中發生任何錯誤，則顯示錯誤訊息
+                    console.error('讀取 GitHub 專案失敗:', error);
+                    gridContainer.innerHTML = `<div class="loading-message"><p>讀取專案失敗。請檢查瀏覽器主控台的錯誤訊息，或稍後再試。</p></div>`;
+                });
+        });
+    </script>
+
+</body>
+</html>
